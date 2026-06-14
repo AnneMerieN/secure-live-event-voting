@@ -100,7 +100,7 @@ export function VoteFlow({ teams, initialCode }: { teams: Team[]; initialCode: s
   if (step === "pick") {
     return (
       <div className="space-y-4">
-        <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-300">
+        <div className="rounded-lg border border-brand-500/30 bg-brand-500/10 px-4 py-3 text-sm text-brand-300">
           Code verified. Pick the finalist you want to vote for.
         </div>
         <div className="space-y-3">
@@ -115,7 +115,7 @@ export function VoteFlow({ teams, initialCode }: { teams: Team[]; initialCode: s
                 className={`flex cursor-pointer items-start gap-4 rounded-2xl border p-5 transition ${
                   selectedTeamId === team.id
                     ? "border-brand-400 bg-brand-500/10 ring-2 ring-brand-400"
-                    : "border-slate-800 bg-slate-900 hover:border-slate-700"
+                    : "border-white/10 bg-surface-card hover:border-white/20"
                 }`}
               >
                 <input
@@ -150,9 +150,9 @@ export function VoteFlow({ teams, initialCode }: { teams: Team[]; initialCode: s
 
   return (
     <div className="card text-center">
-      <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-emerald-500/20">
+      <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-brand-500/20">
         <svg
-          className="h-6 w-6 text-emerald-400"
+          className="h-6 w-6 text-brand-300"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
@@ -164,9 +164,9 @@ export function VoteFlow({ teams, initialCode }: { teams: Team[]; initialCode: s
           <path d="M20 6 9 17l-5-5" />
         </svg>
       </div>
-      <h2 className="mt-4 text-xl font-bold text-slate-50">Thanks for voting!</h2>
+      <h2 className="mt-4 text-xl font-bold text-white">Thanks for voting!</h2>
       <p className="mt-2 text-slate-400">
-        Your vote for <span className="font-semibold text-slate-200">{confirmedTeam?.name}</span> has been
+        Your vote for <span className="font-semibold text-slate-100">{confirmedTeam?.name}</span> has been
         recorded. Your code is now used and cannot be submitted again.
       </p>
       <div className="mt-6">

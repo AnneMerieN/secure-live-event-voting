@@ -91,7 +91,7 @@ export function CodesManager({ initialCodes }: { initialCodes: VotingCode[] }) {
               Copy all
             </button>
           </div>
-          <pre className="mt-3 max-h-48 overflow-auto rounded-lg border border-slate-800 bg-slate-950 p-3 font-mono text-xs leading-relaxed text-slate-300">
+          <pre className="mt-3 max-h-48 overflow-auto rounded-lg border border-white/10 bg-surface-base p-3 font-mono text-xs leading-relaxed text-slate-300">
             {justGenerated.join("\n")}
           </pre>
           <p className="mt-2 text-xs text-slate-500">
@@ -101,9 +101,9 @@ export function CodesManager({ initialCodes }: { initialCodes: VotingCode[] }) {
       )}
 
       <div className="grid grid-cols-3 gap-3">
-        <StatTile label="Total" value={stats.total} />
-        <StatTile label="Unused" value={stats.unused} accent="emerald" />
-        <StatTile label="Used" value={stats.used} accent="slate" />
+        <StatTile label="Total" value={stats.total} accent="slate" />
+        <StatTile label="Unused" value={stats.unused} accent="brand" />
+        <StatTile label="Used" value={stats.used} accent="coral" />
       </div>
 
       <div className="flex flex-wrap gap-2 text-sm">
@@ -112,16 +112,16 @@ export function CodesManager({ initialCodes }: { initialCodes: VotingCode[] }) {
         <FilterChip active={filter === "used"} onClick={() => setFilter("used")}>Used</FilterChip>
       </div>
 
-      <div className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900">
-        <table className="min-w-full divide-y divide-slate-800 text-sm">
-          <thead className="bg-slate-950/50">
+      <div className="overflow-hidden rounded-2xl border border-white/10 bg-surface-card">
+        <table className="min-w-full divide-y divide-white/10 text-sm">
+          <thead className="bg-surface-elevated/50">
             <tr>
               <th className="px-4 py-3 text-left font-semibold text-slate-300">Code</th>
               <th className="px-4 py-3 text-left font-semibold text-slate-300">Status</th>
               <th className="px-4 py-3 text-left font-semibold text-slate-300">Used at</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-slate-800">
+          <tbody className="divide-y divide-white/10">
             {filtered.length === 0 && (
               <tr>
                 <td colSpan={3} className="px-4 py-6 text-center text-slate-500">
@@ -134,11 +134,11 @@ export function CodesManager({ initialCodes }: { initialCodes: VotingCode[] }) {
                 <td className="px-4 py-3 font-mono text-slate-100">{c.code}</td>
                 <td className="px-4 py-3">
                   {c.is_used ? (
-                    <span className="inline-flex items-center gap-1 rounded-full bg-slate-800 px-2 py-0.5 text-xs font-medium text-slate-300">
+                    <span className="inline-flex items-center gap-1 rounded-full bg-orange-500/15 px-2 py-0.5 text-xs font-medium text-orange-400">
                       Used
                     </span>
                   ) : (
-                    <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/15 px-2 py-0.5 text-xs font-medium text-emerald-300">
+                    <span className="inline-flex items-center gap-1 rounded-full bg-brand-500/15 px-2 py-0.5 text-xs font-medium text-brand-300">
                       Unused
                     </span>
                   )}
@@ -166,10 +166,10 @@ function StatTile({
 }: {
   label: string;
   value: number;
-  accent?: "brand" | "emerald" | "slate";
+  accent?: "brand" | "coral" | "slate";
 }) {
   const color =
-    accent === "emerald" ? "text-emerald-400" : accent === "slate" ? "text-slate-300" : "text-brand-300";
+    accent === "coral" ? "text-orange-400" : accent === "slate" ? "text-slate-200" : "text-brand-300";
   return (
     <div className="card">
       <div className="text-xs uppercase tracking-wider text-slate-500">{label}</div>
@@ -194,7 +194,7 @@ function FilterChip({
       className={`rounded-full px-3 py-1 text-sm font-medium transition ${
         active
           ? "bg-brand-500 text-white shadow-lg shadow-brand-500/20"
-          : "border border-slate-800 bg-slate-900 text-slate-300 hover:border-slate-700 hover:bg-slate-800"
+          : "border border-white/10 bg-surface-card text-slate-300 hover:border-white/20 hover:bg-surface-elevated"
       }`}
     >
       {children}

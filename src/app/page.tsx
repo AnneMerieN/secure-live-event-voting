@@ -11,7 +11,7 @@ export default function HomePage() {
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-brand-400" />
             Portfolio project · Next.js + Supabase
           </div>
-          <h1 className="mt-6 text-4xl font-bold tracking-tight text-slate-50 sm:text-5xl">
+          <h1 className="mt-6 text-4xl font-bold tracking-tight text-white sm:text-5xl">
             Secure live-event voting with one-time codes.
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-slate-400">
@@ -84,7 +84,7 @@ function HowItWorks() {
   ];
   return (
     <div className="mt-20">
-      <h2 className="text-2xl font-bold tracking-tight text-slate-50">How it works</h2>
+      <h2 className="text-2xl font-bold tracking-tight text-white">How it works</h2>
       <ol className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {steps.map((s) => (
           <li key={s.n} className="card">

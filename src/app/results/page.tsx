@@ -20,7 +20,7 @@ export default async function ResultsPage() {
       <section className="mx-auto max-w-3xl px-6 py-12 sm:py-16">
         <div className="flex items-start justify-between gap-4">
           <div>
-            <h1 className="text-3xl font-bold tracking-tight text-slate-50">Live results</h1>
+            <h1 className="text-3xl font-bold tracking-tight text-white">Live results</h1>
             <p className="mt-2 text-slate-400">
               {totalVotes === 0
                 ? "No votes yet — results will appear here as soon as voting starts."
@@ -49,7 +49,7 @@ export default async function ResultsPage() {
                 <div className="flex items-baseline justify-between gap-4">
                   <div className="min-w-0">
                     <div className="flex items-center gap-3">
-                      <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-slate-800 text-xs font-semibold text-slate-300">
+                      <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-surface-elevated text-xs font-semibold text-slate-300">
                         {idx + 1}
                       </span>
                       <h3 className="truncate text-base font-semibold text-slate-100">
@@ -63,7 +63,7 @@ export default async function ResultsPage() {
                     )}
                   </div>
                   <div className="shrink-0 text-right">
-                    <div className="text-2xl font-bold tabular-nums text-slate-50">
+                    <div className="text-2xl font-bold tabular-nums text-white">
                       {row.vote_count}
                     </div>
                     <div className="text-xs text-slate-500">
@@ -71,7 +71,7 @@ export default async function ResultsPage() {
                     </div>
                   </div>
                 </div>
-                <div className="mt-4 h-3 w-full overflow-hidden rounded-full bg-slate-800">
+                <div className="mt-4 h-3 w-full overflow-hidden rounded-full bg-surface-elevated">
                   <div
                     className="h-full rounded-full bg-gradient-to-r from-brand-500 to-brand-400 shadow-lg shadow-brand-500/30 transition-all"
                     style={{ width: `${pct}%` }}

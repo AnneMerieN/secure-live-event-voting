@@ -31,7 +31,7 @@ export default async function AdminOverviewPage() {
         {stats.map((s) => (
           <Link key={s.label} href={s.href} className="card transition hover:border-brand-500/50">
             <div className="text-xs uppercase tracking-wider text-slate-500">{s.label}</div>
-            <div className="mt-2 text-3xl font-bold tabular-nums text-slate-50">{s.value}</div>
+            <div className="mt-2 text-3xl font-bold tabular-nums text-white">{s.value}</div>
           </Link>
         ))}
       </div>

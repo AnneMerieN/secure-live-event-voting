@@ -19,7 +19,7 @@ export default async function VotePage({
   return (
     <PageShell>
       <section className="mx-auto max-w-2xl px-6 py-12 sm:py-16">
-        <h1 className="text-3xl font-bold tracking-tight text-slate-50">Cast your vote</h1>
+        <h1 className="text-3xl font-bold tracking-tight text-white">Cast your vote</h1>
         <p className="mt-3 text-slate-400">
           Enter the one-time voting code you received at check-in. Each code can only be
           used once.

@@ -15,7 +15,7 @@ export default async function AdminCodesPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-xl font-bold tracking-tight text-slate-50">Voting codes</h2>
+        <h2 className="text-xl font-bold tracking-tight text-white">Voting codes</h2>
         <p className="mt-1 text-sm text-slate-400">
           Generate codes to hand out at check-in. Each code can only be used once.
         </p>
