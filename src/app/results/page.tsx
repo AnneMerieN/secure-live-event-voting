@@ -20,8 +20,8 @@ export default async function ResultsPage() {
       <section className="mx-auto max-w-3xl px-6 py-12 sm:py-16">
         <div className="flex items-start justify-between gap-4">
           <div>
-            <h1 className="text-3xl font-bold tracking-tight text-slate-900">Live results</h1>
-            <p className="mt-2 text-slate-600">
+            <h1 className="text-3xl font-bold tracking-tight text-slate-50">Live results</h1>
+            <p className="mt-2 text-slate-400">
               {totalVotes === 0
                 ? "No votes yet — results will appear here as soon as voting starts."
                 : `${totalVotes} ${totalVotes === 1 ? "vote" : "votes"} cast so far. Ranked by total.`}
@@ -31,14 +31,14 @@ export default async function ResultsPage() {
         </div>
 
         {error && (
-          <div className="mt-6 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">
+          <div className="mt-6 rounded-lg border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-300">
             Couldn&apos;t load results. Please try again in a moment.
           </div>
         )}
 
         <ol className="mt-8 space-y-3">
           {rows.length === 0 && !error && (
-            <li className="card text-sm text-slate-600">
+            <li className="card text-sm text-slate-400">
               No teams have been added yet. An admin can add them on the dashboard.
             </li>
           )}
@@ -49,10 +49,10 @@ export default async function ResultsPage() {
                 <div className="flex items-baseline justify-between gap-4">
                   <div className="min-w-0">
                     <div className="flex items-center gap-3">
-                      <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-slate-100 text-xs font-semibold text-slate-700">
+                      <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-slate-800 text-xs font-semibold text-slate-300">
                         {idx + 1}
                       </span>
-                      <h3 className="truncate text-base font-semibold text-slate-900">
+                      <h3 className="truncate text-base font-semibold text-slate-100">
                         {row.team_name}
                       </h3>
                     </div>
@@ -63,7 +63,7 @@ export default async function ResultsPage() {
                     )}
                   </div>
                   <div className="shrink-0 text-right">
-                    <div className="text-2xl font-bold tabular-nums text-slate-900">
+                    <div className="text-2xl font-bold tabular-nums text-slate-50">
                       {row.vote_count}
                     </div>
                     <div className="text-xs text-slate-500">
@@ -71,9 +71,9 @@ export default async function ResultsPage() {
                     </div>
                   </div>
                 </div>
-                <div className="mt-4 h-3 w-full overflow-hidden rounded-full bg-slate-100">
+                <div className="mt-4 h-3 w-full overflow-hidden rounded-full bg-slate-800">
                   <div
-                    className="h-full rounded-full bg-brand-500 transition-all"
+                    className="h-full rounded-full bg-gradient-to-r from-brand-500 to-brand-400 shadow-lg shadow-brand-500/30 transition-all"
                     style={{ width: `${pct}%` }}
                     aria-hidden="true"
                   />

@@ -29,8 +29,8 @@ export function ResetDemoDataButton() {
       <button type="button" className="btn-danger" onClick={handleClick} disabled={busy}>
         {busy ? "Resetting…" : "Reset demo data"}
       </button>
-      {done && <p className="text-xs text-emerald-700">All codes and votes cleared.</p>}
-      {error && <p className="text-xs text-red-700">{error}</p>}
+      {done && <p className="text-xs text-emerald-400">All codes and votes cleared.</p>}
+      {error && <p className="text-xs text-red-400">{error}</p>}
     </div>
   );
 }

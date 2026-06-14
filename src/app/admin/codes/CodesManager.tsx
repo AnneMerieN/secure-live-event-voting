@@ -75,7 +75,7 @@ export function CodesManager({ initialCodes }: { initialCodes: VotingCode[] }) {
           {busy ? "Generating…" : "Generate"}
         </button>
         {error && (
-          <div className="w-full rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">
+          <div className="w-full rounded-lg border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-300">
             {error}
           </div>
         )}
@@ -84,14 +84,14 @@ export function CodesManager({ initialCodes }: { initialCodes: VotingCode[] }) {
       {justGenerated.length > 0 && (
         <div className="card">
           <div className="flex items-center justify-between gap-4">
-            <h3 className="text-sm font-semibold text-slate-900">
+            <h3 className="text-sm font-semibold text-slate-100">
               Just generated ({justGenerated.length})
             </h3>
             <button type="button" className="btn-secondary" onClick={handleCopyAll}>
               Copy all
             </button>
           </div>
-          <pre className="mt-3 max-h-48 overflow-auto rounded-lg bg-slate-50 p-3 font-mono text-xs leading-relaxed text-slate-700">
+          <pre className="mt-3 max-h-48 overflow-auto rounded-lg border border-slate-800 bg-slate-950 p-3 font-mono text-xs leading-relaxed text-slate-300">
             {justGenerated.join("\n")}
           </pre>
           <p className="mt-2 text-xs text-slate-500">
@@ -112,16 +112,16 @@ export function CodesManager({ initialCodes }: { initialCodes: VotingCode[] }) {
         <FilterChip active={filter === "used"} onClick={() => setFilter("used")}>Used</FilterChip>
       </div>
 
-      <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
-        <table className="min-w-full divide-y divide-slate-200 text-sm">
-          <thead className="bg-slate-50">
+      <div className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900">
+        <table className="min-w-full divide-y divide-slate-800 text-sm">
+          <thead className="bg-slate-950/50">
             <tr>
-              <th className="px-4 py-3 text-left font-semibold text-slate-700">Code</th>
-              <th className="px-4 py-3 text-left font-semibold text-slate-700">Status</th>
-              <th className="px-4 py-3 text-left font-semibold text-slate-700">Used at</th>
+              <th className="px-4 py-3 text-left font-semibold text-slate-300">Code</th>
+              <th className="px-4 py-3 text-left font-semibold text-slate-300">Status</th>
+              <th className="px-4 py-3 text-left font-semibold text-slate-300">Used at</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-slate-200">
+          <tbody className="divide-y divide-slate-800">
             {filtered.length === 0 && (
               <tr>
                 <td colSpan={3} className="px-4 py-6 text-center text-slate-500">
@@ -131,19 +131,19 @@ export function CodesManager({ initialCodes }: { initialCodes: VotingCode[] }) {
             )}
             {filtered.map((c) => (
               <tr key={c.code}>
-                <td className="px-4 py-3 font-mono text-slate-900">{c.code}</td>
+                <td className="px-4 py-3 font-mono text-slate-100">{c.code}</td>
                 <td className="px-4 py-3">
                   {c.is_used ? (
-                    <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-700">
+                    <span className="inline-flex items-center gap-1 rounded-full bg-slate-800 px-2 py-0.5 text-xs font-medium text-slate-300">
                       Used
                     </span>
                   ) : (
-                    <span className="inline-flex items-center gap-1 rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-medium text-emerald-800">
+                    <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/15 px-2 py-0.5 text-xs font-medium text-emerald-300">
                       Unused
                     </span>
                   )}
                 </td>
-                <td className="px-4 py-3 text-slate-600">
+                <td className="px-4 py-3 text-slate-400">
                   {c.used_at ? new Date(c.used_at).toLocaleString() : "—"}
                 </td>
               </tr>
@@ -169,7 +169,7 @@ function StatTile({
   accent?: "brand" | "emerald" | "slate";
 }) {
   const color =
-    accent === "emerald" ? "text-emerald-700" : accent === "slate" ? "text-slate-700" : "text-brand-700";
+    accent === "emerald" ? "text-emerald-400" : accent === "slate" ? "text-slate-300" : "text-brand-300";
   return (
     <div className="card">
       <div className="text-xs uppercase tracking-wider text-slate-500">{label}</div>
@@ -193,8 +193,8 @@ function FilterChip({
       onClick={onClick}
       className={`rounded-full px-3 py-1 text-sm font-medium transition ${
         active
-          ? "bg-brand-600 text-white"
-          : "border border-slate-200 bg-white text-slate-700 hover:bg-slate-50"
+          ? "bg-brand-500 text-white shadow-lg shadow-brand-500/20"
+          : "border border-slate-800 bg-slate-900 text-slate-300 hover:border-slate-700 hover:bg-slate-800"
       }`}
     >
       {children}

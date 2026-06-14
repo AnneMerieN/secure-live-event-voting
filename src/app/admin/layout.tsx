@@ -13,8 +13,8 @@ export default async function AdminLayout({ children }: { children: React.ReactN
     return (
       <PageShell>
         <section className="mx-auto max-w-md px-6 py-16">
-          <h1 className="text-2xl font-bold tracking-tight text-slate-900">Admin sign in</h1>
-          <p className="mt-2 text-sm text-slate-600">
+          <h1 className="text-2xl font-bold tracking-tight text-slate-50">Admin sign in</h1>
+          <p className="mt-2 text-sm text-slate-400">
             {check.reason === "not-admin"
               ? "You're signed in, but this account isn't registered as an admin."
               : "Sign in with the admin account configured for this event."}
@@ -30,15 +30,15 @@ export default async function AdminLayout({ children }: { children: React.ReactN
   return (
     <PageShell>
       <div className="mx-auto max-w-6xl px-6 py-8">
-        <div className="mb-8 flex items-center justify-between gap-4 border-b border-slate-200 pb-6">
+        <div className="mb-8 flex items-center justify-between gap-4 border-b border-slate-800 pb-6">
           <div>
             <div className="text-xs uppercase tracking-wider text-slate-500">Admin</div>
-            <h1 className="mt-1 text-2xl font-bold tracking-tight text-slate-900">
+            <h1 className="mt-1 text-2xl font-bold tracking-tight text-slate-50">
               Event dashboard
             </h1>
           </div>
           <div className="flex items-center gap-3">
-            <span className="hidden text-sm text-slate-600 sm:inline">{check.email}</span>
+            <span className="hidden text-sm text-slate-400 sm:inline">{check.email}</span>
             <AdminSignOutButton />
           </div>
         </div>
@@ -57,7 +57,7 @@ function AdminNavLink({ href, children }: { href: string; children: React.ReactN
   return (
     <Link
       href={href}
-      className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 font-medium text-slate-700 hover:border-slate-300 hover:bg-slate-50"
+      className="rounded-lg border border-slate-800 bg-slate-900 px-3 py-1.5 font-medium text-slate-300 hover:border-slate-700 hover:bg-slate-800 hover:text-slate-100"
     >
       {children}
     </Link>

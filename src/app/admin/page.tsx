@@ -29,37 +29,37 @@ export default async function AdminOverviewPage() {
     <div className="space-y-8">
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {stats.map((s) => (
-          <Link key={s.label} href={s.href} className="card transition hover:border-brand-300">
+          <Link key={s.label} href={s.href} className="card transition hover:border-brand-500/50">
             <div className="text-xs uppercase tracking-wider text-slate-500">{s.label}</div>
-            <div className="mt-2 text-3xl font-bold tabular-nums text-slate-900">{s.value}</div>
+            <div className="mt-2 text-3xl font-bold tabular-nums text-slate-50">{s.value}</div>
           </Link>
         ))}
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="card">
-          <h2 className="text-base font-semibold text-slate-900">Quick actions</h2>
+          <h2 className="text-base font-semibold text-slate-100">Quick actions</h2>
           <ul className="mt-3 space-y-2 text-sm">
             <li>
-              <Link className="text-brand-700 hover:underline" href="/admin/teams">
+              <Link className="text-brand-300 hover:text-brand-200 hover:underline" href="/admin/teams">
                 → Add or edit finalist teams
               </Link>
             </li>
             <li>
-              <Link className="text-brand-700 hover:underline" href="/admin/codes">
+              <Link className="text-brand-300 hover:text-brand-200 hover:underline" href="/admin/codes">
                 → Generate one-time voting codes
               </Link>
             </li>
             <li>
-              <Link className="text-brand-700 hover:underline" href="/results">
+              <Link className="text-brand-300 hover:text-brand-200 hover:underline" href="/results">
                 → Open the live results page
               </Link>
             </li>
           </ul>
         </div>
         <div className="card">
-          <h2 className="text-base font-semibold text-slate-900">Reset demo data</h2>
-          <p className="mt-2 text-sm text-slate-600">
+          <h2 className="text-base font-semibold text-slate-100">Reset demo data</h2>
+          <p className="mt-2 text-sm text-slate-400">
             Clears all voting codes and votes so you can run another demo. Teams are kept.
           </p>
           <div className="mt-4">

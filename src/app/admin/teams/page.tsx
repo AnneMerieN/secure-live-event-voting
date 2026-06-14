@@ -14,8 +14,8 @@ export default async function AdminTeamsPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-xl font-bold tracking-tight text-slate-900">Finalist teams</h2>
-        <p className="mt-1 text-sm text-slate-600">
+        <h2 className="text-xl font-bold tracking-tight text-slate-50">Finalist teams</h2>
+        <p className="mt-1 text-sm text-slate-400">
           Add the teams or projects attendees will be voting on.
         </p>
       </div>

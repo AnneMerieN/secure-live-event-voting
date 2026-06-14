@@ -100,12 +100,12 @@ export function VoteFlow({ teams, initialCode }: { teams: Team[]; initialCode: s
   if (step === "pick") {
     return (
       <div className="space-y-4">
-        <div className="rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-800">
+        <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-300">
           Code verified. Pick the finalist you want to vote for.
         </div>
         <div className="space-y-3">
           {teams.length === 0 ? (
-            <div className="card text-sm text-slate-600">
+            <div className="card text-sm text-slate-400">
               No finalists have been set up yet. Please contact event staff.
             </div>
           ) : (
@@ -114,21 +114,21 @@ export function VoteFlow({ teams, initialCode }: { teams: Team[]; initialCode: s
                 key={team.id}
                 className={`flex cursor-pointer items-start gap-4 rounded-2xl border p-5 transition ${
                   selectedTeamId === team.id
-                    ? "border-brand-500 bg-brand-50 ring-2 ring-brand-500"
-                    : "border-slate-200 bg-white hover:border-slate-300"
+                    ? "border-brand-400 bg-brand-500/10 ring-2 ring-brand-400"
+                    : "border-slate-800 bg-slate-900 hover:border-slate-700"
                 }`}
               >
                 <input
                   type="radio"
                   name="team"
-                  className="mt-1 h-4 w-4 text-brand-600"
+                  className="mt-1 h-4 w-4 accent-brand-500"
                   checked={selectedTeamId === team.id}
                   onChange={() => setSelectedTeamId(team.id)}
                 />
                 <div>
-                  <div className="font-semibold text-slate-900">{team.name}</div>
+                  <div className="font-semibold text-slate-100">{team.name}</div>
                   {team.description && (
-                    <div className="mt-1 text-sm text-slate-600">{team.description}</div>
+                    <div className="mt-1 text-sm text-slate-400">{team.description}</div>
                   )}
                 </div>
               </label>
@@ -150,9 +150,9 @@ export function VoteFlow({ teams, initialCode }: { teams: Team[]; initialCode: s
 
   return (
     <div className="card text-center">
-      <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-emerald-100">
+      <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-emerald-500/20">
         <svg
-          className="h-6 w-6 text-emerald-600"
+          className="h-6 w-6 text-emerald-400"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
@@ -164,9 +164,9 @@ export function VoteFlow({ teams, initialCode }: { teams: Team[]; initialCode: s
           <path d="M20 6 9 17l-5-5" />
         </svg>
       </div>
-      <h2 className="mt-4 text-xl font-bold text-slate-900">Thanks for voting!</h2>
-      <p className="mt-2 text-slate-600">
-        Your vote for <span className="font-semibold">{confirmedTeam?.name}</span> has been
+      <h2 className="mt-4 text-xl font-bold text-slate-50">Thanks for voting!</h2>
+      <p className="mt-2 text-slate-400">
+        Your vote for <span className="font-semibold text-slate-200">{confirmedTeam?.name}</span> has been
         recorded. Your code is now used and cannot be submitted again.
       </p>
       <div className="mt-6">
@@ -180,7 +180,7 @@ export function VoteFlow({ teams, initialCode }: { teams: Team[]; initialCode: s
 
 function ErrorBanner({ message }: { message: string }) {
   return (
-    <div className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">
+    <div className="rounded-lg border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-300">
       {message}
     </div>
   );

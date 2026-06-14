@@ -4,16 +4,17 @@ import { PageShell } from "@/components/PageShell";
 export default function HomePage() {
   return (
     <PageShell>
-      <section className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
+      <section className="relative mx-auto max-w-6xl px-6 py-16 sm:py-24">
+        <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 mx-auto h-72 max-w-3xl bg-gradient-to-b from-brand-500/20 via-brand-500/5 to-transparent blur-3xl" />
         <div className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-medium text-brand-700">
-            <span className="inline-block h-1.5 w-1.5 rounded-full bg-brand-500" />
+          <div className="inline-flex items-center gap-2 rounded-full border border-brand-500/30 bg-brand-500/10 px-3 py-1 text-xs font-medium text-brand-300">
+            <span className="inline-block h-1.5 w-1.5 rounded-full bg-brand-400" />
             Portfolio project · Next.js + Supabase
           </div>
-          <h1 className="mt-6 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
+          <h1 className="mt-6 text-4xl font-bold tracking-tight text-slate-50 sm:text-5xl">
             Secure live-event voting with one-time codes.
           </h1>
-          <p className="mt-5 text-lg leading-relaxed text-slate-600">
+          <p className="mt-5 text-lg leading-relaxed text-slate-400">
             Only attendees who check in at the door can vote. Each person gets a unique
             one-time code; the system validates it server-side, records their vote, and
             burns the code so nobody can submit twice.
@@ -52,8 +53,8 @@ export default function HomePage() {
 function FeatureCard({ title, body }: { title: string; body: string }) {
   return (
     <div className="card">
-      <h3 className="text-base font-semibold text-slate-900">{title}</h3>
-      <p className="mt-2 text-sm leading-relaxed text-slate-600">{body}</p>
+      <h3 className="text-base font-semibold text-slate-100">{title}</h3>
+      <p className="mt-2 text-sm leading-relaxed text-slate-400">{body}</p>
     </div>
   );
 }
@@ -83,15 +84,15 @@ function HowItWorks() {
   ];
   return (
     <div className="mt-20">
-      <h2 className="text-2xl font-bold tracking-tight text-slate-900">How it works</h2>
+      <h2 className="text-2xl font-bold tracking-tight text-slate-50">How it works</h2>
       <ol className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {steps.map((s) => (
           <li key={s.n} className="card">
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-brand-600 text-sm font-semibold text-white">
+            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-brand-500 text-sm font-semibold text-white shadow-lg shadow-brand-500/20">
               {s.n}
             </div>
-            <h3 className="mt-4 text-base font-semibold text-slate-900">{s.title}</h3>
-            <p className="mt-2 text-sm leading-relaxed text-slate-600">{s.body}</p>
+            <h3 className="mt-4 text-base font-semibold text-slate-100">{s.title}</h3>
+            <p className="mt-2 text-sm leading-relaxed text-slate-400">{s.body}</p>
           </li>
         ))}
       </ol>

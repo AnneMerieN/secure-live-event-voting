@@ -79,7 +79,7 @@ export function TeamsManager({ initialTeams }: { initialTeams: Team[] }) {
   return (
     <div className="space-y-6">
       <form className="card space-y-4" onSubmit={handleCreate}>
-        <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-500">
+        <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-400">
           Add a team
         </h3>
         <div>
@@ -108,7 +108,7 @@ export function TeamsManager({ initialTeams }: { initialTeams: Team[] }) {
           />
         </div>
         {error && (
-          <div className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">
+          <div className="rounded-lg border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-300">
             {error}
           </div>
         )}
@@ -119,7 +119,7 @@ export function TeamsManager({ initialTeams }: { initialTeams: Team[] }) {
 
       <div className="space-y-3">
         {teams.length === 0 && (
-          <div className="card text-sm text-slate-600">No teams yet — add one above.</div>
+          <div className="card text-sm text-slate-400">No teams yet — add one above.</div>
         )}
         {teams.map((team) => (
           <div key={team.id} className="card">
@@ -151,9 +151,9 @@ export function TeamsManager({ initialTeams }: { initialTeams: Team[] }) {
             ) : (
               <div className="flex items-start justify-between gap-4">
                 <div className="min-w-0">
-                  <h4 className="font-semibold text-slate-900">{team.name}</h4>
+                  <h4 className="font-semibold text-slate-100">{team.name}</h4>
                   {team.description && (
-                    <p className="mt-1 text-sm text-slate-600">{team.description}</p>
+                    <p className="mt-1 text-sm text-slate-400">{team.description}</p>
                   )}
                 </div>
                 <div className="flex shrink-0 gap-2">

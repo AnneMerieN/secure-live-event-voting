@@ -33,8 +33,8 @@ export function AdminLogin({ notAdmin }: { notAdmin: boolean }) {
   if (notAdmin) {
     return (
       <div className="card space-y-3">
-        <p className="text-sm text-slate-600">
-          This account isn&apos;t in the <code className="rounded bg-slate-100 px-1">admin_users</code> table.
+        <p className="text-sm text-slate-400">
+          This account isn&apos;t in the <code className="rounded bg-slate-800 px-1 text-slate-200">admin_users</code> table.
           Ask an existing admin to add your user id, then sign back in.
         </p>
         <button type="button" className="btn-secondary" onClick={handleSignOut}>
@@ -73,7 +73,7 @@ export function AdminLogin({ notAdmin }: { notAdmin: boolean }) {
         />
       </div>
       {error && (
-        <div className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">
+        <div className="rounded-lg border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-300">
           {error}
         </div>
       )}
@@ -82,7 +82,7 @@ export function AdminLogin({ notAdmin }: { notAdmin: boolean }) {
       </button>
       <p className="text-xs text-slate-500">
         Admins are created in Supabase Auth (Authentication → Users) and then added to the
-        <code className="mx-1 rounded bg-slate-100 px-1">admin_users</code> table by their user id.
+        <code className="mx-1 rounded bg-slate-800 px-1 text-slate-300">admin_users</code> table by their user id.
       </p>
     </form>
   );
