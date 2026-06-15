@@ -13,7 +13,7 @@ export function PageShell({
         <header className="border-b border-white/10 bg-surface-base/80 backdrop-blur">
           <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
             <Link href="/" className="flex items-center gap-2 font-semibold text-slate-100">
-              <span className="inline-block h-7 w-7 rounded-lg bg-gradient-to-br from-brand-400 to-brand-600 shadow-lg shadow-brand-500/20" />
+              <span className="inline-block h-7 w-7 rounded-lg bg-gradient-to-br from-brand-400 to-brand-600" />
               <span>Live Event Voting</span>
             </Link>
             <nav className="flex items-center gap-1 text-sm">

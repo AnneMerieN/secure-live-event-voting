@@ -84,7 +84,6 @@ export default async function ResultsPage() {
                     style={{
                       width: `${pct}%`,
                       backgroundColor: color,
-                      boxShadow: `0 0 24px -4px ${color}66`,
                     }}
                     aria-hidden="true"
                   />
