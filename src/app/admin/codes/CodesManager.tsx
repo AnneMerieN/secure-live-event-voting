@@ -134,7 +134,7 @@ export function CodesManager({ initialCodes }: { initialCodes: VotingCode[] }) {
                 <td className="px-4 py-3 font-mono text-slate-100">{c.code}</td>
                 <td className="px-4 py-3">
                   {c.is_used ? (
-                    <span className="inline-flex items-center gap-1 rounded-full bg-orange-500/15 px-2 py-0.5 text-xs font-medium text-orange-400">
+                    <span className="inline-flex items-center gap-1 rounded-full bg-palette-orange/15 px-2 py-0.5 text-xs font-medium text-palette-orange">
                       Used
                     </span>
                   ) : (
@@ -169,7 +169,7 @@ function StatTile({
   accent?: "brand" | "coral" | "slate";
 }) {
   const color =
-    accent === "coral" ? "text-orange-400" : accent === "slate" ? "text-slate-200" : "text-brand-300";
+    accent === "coral" ? "text-palette-orange" : accent === "slate" ? "text-slate-200" : "text-brand-300";
   return (
     <div className="card">
       <div className="text-xs uppercase tracking-wider text-slate-500">{label}</div>

@@ -1,6 +1,7 @@
 import { PageShell } from "@/components/PageShell";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 import type { ResultRow } from "@/lib/types";
+import { colorForTeam } from "@/lib/teamColor";
 import { ResultsRefresher } from "./ResultsRefresher";
 
 export const dynamic = "force-dynamic";
@@ -44,6 +45,7 @@ export default async function ResultsPage() {
           )}
           {rows.map((row, idx) => {
             const pct = Math.round((row.vote_count / maxVotes) * 100);
+            const color = colorForTeam(row.team_id);
             return (
               <li key={row.team_id} className="card">
                 <div className="flex items-baseline justify-between gap-4">
@@ -52,6 +54,11 @@ export default async function ResultsPage() {
                       <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-surface-elevated text-xs font-semibold text-slate-300">
                         {idx + 1}
                       </span>
+                      <span
+                        className="inline-block h-2.5 w-2.5 shrink-0 rounded-full"
+                        style={{ backgroundColor: color }}
+                        aria-hidden="true"
+                      />
                       <h3 className="truncate text-base font-semibold text-slate-100">
                         {row.team_name}
                       </h3>
@@ -73,8 +80,12 @@ export default async function ResultsPage() {
                 </div>
                 <div className="mt-4 h-3 w-full overflow-hidden rounded-full bg-surface-elevated">
                   <div
-                    className="h-full rounded-full bg-gradient-to-r from-brand-500 to-brand-400 shadow-lg shadow-brand-500/30 transition-all"
-                    style={{ width: `${pct}%` }}
+                    className="h-full rounded-full transition-all"
+                    style={{
+                      width: `${pct}%`,
+                      backgroundColor: color,
+                      boxShadow: `0 0 24px -4px ${color}66`,
+                    }}
                     aria-hidden="true"
                   />
                 </div>

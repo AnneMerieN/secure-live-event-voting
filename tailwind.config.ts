@@ -5,27 +5,44 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Surface tones — matches the dashboard palette spec.
+        // Surface tones — straight from the source palette spec.
         surface: {
-          base: "#1A1A1A",      // body / page background
-          card: "#2A2A35",      // cards, widgets
-          elevated: "#33333F",  // hover states, table headers
+          base: "#121213",      // body / page background (palette "Black")
+          card: "#1F1F20",      // cards, widgets (palette "Gray 200")
+          elevated: "#2A2A2C",  // hover states, table headers
         },
-        // Brand palette is the spec's Electric Teal (#06B6D4 / cyan-500).
-        // Existing bg-brand-* / text-brand-* / border-brand-* classes
-        // throughout the app render as teal automatically.
+        // Brand palette is a green ramp centered on #15AD70 ("Green" in the
+        // source palette). Existing bg-brand-* / text-brand-* / border-brand-*
+        // classes throughout the app render as green automatically.
         brand: {
-          50:  "#ecfeff",
-          100: "#cffafe",
-          200: "#a5f3fc",
-          300: "#67e8f9",
-          400: "#22d3ee",
-          500: "#06b6d4",
-          600: "#0891b2",
-          700: "#0e7490",
-          800: "#155e75",
-          900: "#164e63",
-          950: "#083344",
+          50:  "#ecfdf3",
+          100: "#d3f9e0",
+          200: "#a8f0c6",
+          300: "#5edca0",
+          400: "#2ec486",
+          500: "#15AD70",
+          600: "#119057",
+          700: "#0c6e44",
+          800: "#084e30",
+          900: "#053a24",
+          950: "#022817",
+        },
+        // Named accents from the source palette. Available as
+        // bg-palette-orange, text-palette-purple, etc. Used on /results to
+        // give each team a stable, distinct bar color.
+        palette: {
+          lightgreen: "#82D25D",
+          green:      "#15AD70",
+          turquoise:  "#68D0CA",
+          lightblue:  "#73BDE7",
+          blue:       "#7193ED",
+          purple:     "#BF9FF1",
+          pink:       "#F9C3D6",
+          red:        "#E15E42",
+          orange:     "#F78D2C",
+          yellow:     "#FFC700",
+          beige:      "#F5D4C0",
+          winered:    "#EB546F",
         },
       },
       fontFamily: {
